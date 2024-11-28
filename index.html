@@ -1,9 +1,41 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <img src="images/logo.png">
-        <script src="index.js"></script>
-    </body>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="images/logo.png" alt="oldagram logo." id="logo">
+        <img class="avatar" src="images/user-avatar.jpg" alt="your avatar.">
+      </header>
+  
+      <main>
+        <div class="post-container">
+          <div class="post-header">
+            <img src="images/avatar-vangogh.jpg" alt="" class="avatar">
+            <div class="user-info">
+              <p class="full-name">Vincent van Gogh</p>
+              <p class="location">Zundert, Netherlands</p>
+            </div>
+          </div>
+          <div class="post">
+            <img src="images/post-vangogh.jpg" alt="a slefie of vincy"/>
+          </div>
+          <div class="post-footer">
+            <div class="interaction-icons">
+              <img class="icon" src="images/icon-heart.png" alt="like icon">
+              <img class="icon" src="images/icon-comment.png" alt="comment icon">
+              <img class="icon" src="images/icon-dm.png" alt="direct message icon">
+            </div>
+            <p class="like-count">21 likes</p>
+            <p class="post-text"><span class="user-name">vincey1853</span> just took a few mushrooms lol</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
