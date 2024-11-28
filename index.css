@@ -33,6 +33,7 @@ header {
 .post-container {
     background-color: white;
     font-size: 0.8125rem;
+    margin-bottom: 25px;
 }
 
 .post-header {
