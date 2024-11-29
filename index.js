@@ -41,11 +41,11 @@ function renderPost(postObj) {
         </div>
       </div>
       <div class="post">
-        <img src="${post}" alt="a post from ${name}"/>
+        <img src="${post}" data-username="${username}" alt="a post from ${name}"/>
       </div>
       <div class="post-footer">
         <div class="interaction-icons">
-          <img class="icon" src="images/icon-heart.png" alt="like icon">
+          <img class="icon like-btn" data-username="${username}" src="images/icon-heart.png" alt="like icon">
           <img class="icon" src="images/icon-comment.png" alt="comment icon">
           <img class="icon" src="images/icon-dm.png" alt="direct message icon">
         </div>
@@ -63,6 +63,35 @@ function renderPosts(posts) {
     }
 
     document.querySelector("main").innerHTML = postsEl;
+
+    const postEls = document.querySelectorAll(".post");
+
+    postEls.forEach((post) => {
+      post.addEventListener("dblclick", (event) => {
+        increaseLikes(posts, event.target.dataset.username)
+      })
+    })
+
+    const likeBtns = document.querySelectorAll(".like-btn");
+
+    likeBtns.forEach((post) => {
+      post.addEventListener("click", (event) => {
+        increaseLikes(posts, event.target.dataset.username);
+      })
+    })
 }
 
 renderPosts(posts);
+
+function increaseLikes(posts, username) {
+  const updatedPosts = posts.map(post => {
+    if (post.username === username) {
+      post.likes++;
+      return post;
+    } 
+    return post;
+  })
+
+  renderPosts(updatedPosts)
+}
+
